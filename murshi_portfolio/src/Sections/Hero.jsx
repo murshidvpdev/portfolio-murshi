@@ -1,53 +1,69 @@
 import Section from "../components/Section";
 import { motion } from "framer-motion";
+import { FaLinkedin, FaGithub ,FaEnvelope} from "react-icons/fa";
 
 export default function Hero() {
   return (
-    <section id="home" style={{ minHeight: "100vh", display: "flex", alignItems: "center" }}>
+    <section id="home" style={heroSection}>
       <Section>
-        <div style={heroWrapper}>
+        <div style={layout}>
           
           {/* LEFT CONTENT */}
-          <div style={left}>
+          <div style={content}>
             <motion.h1
-              initial={{ opacity: 0, x: -80 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              Murshid VP
-            </motion.h1>
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                style={title}
+                >
+                Hi, I’m Murshid VP
+                </motion.h1>
 
-            <motion.p
-              initial={{ opacity: 0, x: -40 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.3 }}
-            >
-              Senior Python Developer specializing in scalable backend systems,
-              automation platforms, and enterprise document intelligence solutions.
+                <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+                style={subtitle}
+                >
+                I’m a <span style={highlight}>Python Developer | ML Engineer | Data Analyst</span> with almost 5 years of experience in web development, data analytics, and ML-driven solutions. I enjoy analyzing data, predicting trends, and visualizing results to solve complex business problems efficiently
             </motion.p>
 
-            <motion.div
+
+            <motion.button
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6 }}
-              style={{ marginTop: 30 }}
+              transition={{ delay: 0.4 }}
+              style={ctaBtn}
+              onClick={() =>
+                document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
+            }
             >
-              <button style={ctaBtn}>Let’s work together</button>
-            </motion.div>
+            
+              Reach me 
+            </motion.button>
           </div>
 
-          {/* RIGHT PROFILE IMAGE */}
+          {/* RIGHT IMAGE */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.85 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.5, duration: 0.6 }}
-            style={right}
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.3 }}
+            style={imageWrapper}
           >
-            <img
-              src="/profile.jpg"
-              alt="Murshid VP"
-              style={profileImage}
-            />
+            <img src="/profile.jpg" alt="Murshid VP" style={heroImage} />
+
+            {/* SOCIALS */}
+            <div style={socials}>
+              <a href="https://linkedin.com" target="_blank" rel="noreferrer">
+                <FaLinkedin />
+              </a>
+              <a href="https://github.com" target="_blank" rel="noreferrer">
+                <FaGithub />
+              </a>
+              <a href="mailto:your-email@gmail.com">
+                <FaEnvelope />
+                </a>
+            </div>
           </motion.div>
 
         </div>
@@ -56,41 +72,76 @@ export default function Hero() {
   );
 }
 
+/* ---------------- STYLES ---------------- */
 
-const heroWrapper = {
+const heroSection = {
+  minHeight: "100vh",
+  background: "#f2f2f2",
+  display: "flex",
+  alignItems: "center",
+};
+
+const layout = {
   display: "flex",
   alignItems: "center",
   justifyContent: "space-between",
-  gap: "60px",
+  gap: "80px",
 };
 
-const left = {
-  flex: 1,
+const content = {
+  maxWidth: "520px",
 };
 
-const right = {
-  flex: 1,
-  display: "flex",
-  justifyContent: "center",
+const title = {
+  fontSize: "56px",
+  fontWeight: 700,
+  color: "#111",
 };
 
-const profileImage = {
-  width: "320px",
-  height: "320px",
-  borderRadius: "50%",
-  objectFit: "cover",
-  border: "4px solid rgba(255,255,255,0.15)",
-  boxShadow: "0 20px 60px rgba(0,0,0,0.4)",
-  objectPosition: "center 20%",
+const subtitle = {
+  marginTop: "16px",
+  fontSize: "18px",
+  color: "#555",
+  lineHeight: 1.6,
+};
+
+const highlight = {
+  background: "#ffe3d3",
+  padding: "2px 6px",
+  fontWeight: 600,
+  color: "#000",
 };
 
 const ctaBtn = {
-  padding: "14px 28px",
-  fontSize: "16px",
-  borderRadius: "30px",
+  marginTop: "32px",
+  padding: "14px 34px",
+  background: "#111",
+  color: "#fff",
   border: "none",
+  borderRadius: "6px",
   cursor: "pointer",
-  background: "linear-gradient(135deg, #6ee7ff, #8b5cf6)",
-  color: "#000",
   fontWeight: 600,
+};
+
+const imageWrapper = {
+  position: "relative",
+  left: '40px'
+};
+
+const heroImage = {
+  width: "360px",
+  height: "460px",
+  objectFit: "cover",
+  border: "3px solid #rgb(204, 186, 175)",
+};
+
+const socials = {
+  position: "absolute",
+  right: "-48px",
+  top: "50%",
+  transform: "translateY(-50%)",
+  display: "flex",
+  flexDirection: "column",
+  gap: "16px",
+  fontSize: "20px",
 };

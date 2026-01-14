@@ -1,3 +1,5 @@
+
+
 .experience-section {
   background: linear-gradient(180deg, #ffffff, #f8fafc);
   padding: 64px 0 64px;
@@ -131,4 +133,11 @@
 
 #experience {
   scroll-margin-top: clamp(80px, 10vh, 110px);
+}
+
+@media (max-width: 768px) {
+  .experience-section {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
 }

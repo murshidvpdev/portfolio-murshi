@@ -139,3 +139,10 @@
 .honeypot {
   display: none;
 }
+
+@media (max-width: 768px) {
+  .contact-section {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}

@@ -38,39 +38,43 @@ export default function Experience() {
 
               <ul className="experience-list">
                 <li>
-                  Architected and delivered high-performance backend applications
-                  and microservices using Python, FastAPI, Flask, and Django.
+                  Architected and delivered scalable backend systems and microservices using
+                  Python, FastAPI, Flask, and Django, supporting high-volume enterprise
+                  workloads in production environments.
                 </li>
                 <li>
-                  Led enterprise automation and document intelligence platforms
-                  for clients including Citi Bank (India), DOZ (USA), Bank Islam
-                  (Malaysia), and Evostel (Saudi Arabia).
+                  Led large-scale automation and document intelligence platforms for global
+                  clients including Citi Bank (India), DOZ (USA), Bank Islam (Malaysia), and
+                  Evostel (Saudi Arabia), significantly reducing manual processing effort.
                 </li>
                 <li>
-                  Designed end-to-end pipelines for document ingestion, OCR-based
-                  extraction, intelligent parsing, validation, and exception
-                  handling.
+                  Designed and implemented end-to-end document pipelines covering ingestion,
+                  OCR-based extraction, intelligent parsing, validation, exception handling,
+                  and audit-ready outputs, achieving ~97–98% data accuracy.
                 </li>
                 <li>
-                  Built ML-ready workflows using Pandas for schema validation,
-                  normalization, reconciliation, and reporting.
+                  Built ML-ready data workflows using Pandas for schema validation,
+                  normalization, reconciliation, and structured reporting, enabling future
+                  ML integration.
                 </li>
                 <li>
-                  Optimized PostgreSQL schemas and complex SQL queries for
-                  high-volume transactional systems.
+                  Optimized PostgreSQL schemas, indexes, and complex SQL queries to handle
+                  large transactional datasets with improved performance and reliability.
                 </li>
                 <li>
-                  Worked in Agile teams using Jira for sprint planning,
-                  estimations, and delivery tracking.
+                  Collaborated in Agile teams using Jira for sprint planning, estimation, and
+                  delivery tracking, ensuring predictable and on-time releases.
                 </li>
                 <li>
-                  Followed Git-based workflows with feature branching, pull
-                  requests, code reviews, and release management.
+                  Followed Git-based development workflows with feature branching, pull
+                  requests, peer code reviews, and controlled release management.
                 </li>
                 <li>
-                  Mentored junior developers and reviewed critical code paths.
+                  Mentored junior developers, conducted code reviews on critical modules, and
+                  enforced clean coding and architectural best practices.
                 </li>
               </ul>
+
 
               <div className="experience-skills">
                 <span>Python</span>

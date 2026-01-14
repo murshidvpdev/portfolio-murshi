@@ -1,6 +1,7 @@
+import { IconContext } from "react-icons";
 import Section from "../components/Section";
 import { motion } from "framer-motion";
-import { FaLinkedin, FaGithub ,FaEnvelope} from "react-icons/fa";
+import { FaLinkedin, FaGithub ,FaEnvelope ,FaPhone} from "react-icons/fa";
 
 export default function Hero() {
   return (
@@ -53,17 +54,22 @@ export default function Hero() {
             <img src="/profile.jpg" alt="Murshid VP" style={heroImage} />
 
             {/* SOCIALS */}
+            <IconContext.Provider value={{ color: "#000", size: "20px" }}>
             <div style={socials}>
-              <a href="https://linkedin.com" target="_blank" rel="noreferrer">
+              <a href="https://www.linkedin.com/in/murshid-vp-554244204/" target="_blank" rel="noreferrer">
                 <FaLinkedin />
               </a>
-              <a href="https://github.com" target="_blank" rel="noreferrer">
+              <a href="https://github.com/murshidvpdev/" target="_blank" rel="noreferrer">
                 <FaGithub />
               </a>
-              <a href="mailto:your-email@gmail.com">
+              <a href="mailto:murshidvp.dev@gmail.com">
                 <FaEnvelope />
-                </a>
+              </a>
+              <a href="tel:+919995332723">
+                <FaPhone />
+              </a>
             </div>
+            </IconContext.Provider>
           </motion.div>
 
         </div>
@@ -136,6 +142,7 @@ const heroImage = {
 };
 
 const socials = {
+  color: "#000", // ✅ must be a string
   position: "absolute",
   right: "-48px",
   top: "50%",

@@ -64,8 +64,12 @@ export default function Contact() {
               <p>
                 <strong>Email</strong><br />
                 <a href="mailto:murshidveypey790@gmail.com">
-                  murshidveypey790@gmail.com
+                  murshidvp.dev@gmail.com
                 </a>
+              </p>
+              <p>
+                <strong>Phone</strong><br />
+                +91 9995332723
               </p>
               <p>
                 <strong>Location</strong><br />

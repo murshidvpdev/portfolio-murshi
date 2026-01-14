@@ -1,0 +1,21 @@
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    padding: 24px 16px;
+  }
+
+  .hero-left,
+  .hero-right {
+    width: 100%;
+  }
+
+  .hero-right {
+    background: none; /* remove black background */
+    margin-top: 24px;
+  }
+
+  .hero-image {
+    max-width: 280px;
+    margin: 0 auto;
+  }
+}

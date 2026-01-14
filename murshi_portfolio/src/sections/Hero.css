@@ -1,0 +1,15 @@
+.hero {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* MOBILE FIX */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    min-height: auto;
+    padding: 24px 16px;
+  }
+}
+

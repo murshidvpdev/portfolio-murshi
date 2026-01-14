@@ -5,7 +5,7 @@ import { FaLinkedin, FaGithub ,FaEnvelope ,FaPhone} from "react-icons/fa";
 
 export default function Hero() {
   return (
-    <section id="home" style={heroSection}>
+    <section className="hero" id="home" style={heroSection}>
       <Section>
         <div style={layout}>
           
@@ -83,9 +83,8 @@ export default function Hero() {
 const heroSection = {
   minHeight: "100vh",
   background: "#f2f2f2",
-  display: "flex",
-  alignItems: "center",
 };
+
 
 const layout = {
   display: "flex",
@@ -131,7 +130,7 @@ const ctaBtn = {
 
 const imageWrapper = {
   position: "relative",
-  left: '40px'
+  right: '80px'
 };
 
 const heroImage = {

@@ -1,13 +1,31 @@
 import { IconContext } from "react-icons";
+import { useEffect, useState } from "react";
+
 import Section from "../components/Section";
 import { motion } from "framer-motion";
 import { FaLinkedin, FaGithub ,FaEnvelope ,FaPhone} from "react-icons/fa";
 
 export default function Hero() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const media = window.matchMedia("(max-width: 768px)");
+    setIsMobile(media.matches);
+
+    const handler = (e) => setIsMobile(e.matches);
+    media.addEventListener("change", handler);
+
+    return () => media.removeEventListener("change", handler);
+  }, []);
   return (
     <section className="hero" id="home" style={heroSection}>
       <Section>
-        <div style={layout}>
+        <div style={{
+          ...layout,
+          flexDirection: isMobile ? "column" : "row",
+          gap: isMobile ? "40px" : "80px",
+          textAlign: isMobile ? "center" : "left",
+        }}>
           
           {/* LEFT CONTENT */}
           <div style={content}>
@@ -49,13 +67,13 @@ export default function Hero() {
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3 }}
-            style={imageWrapper}
+            style={imageWrapper(isMobile)}
           >
-            <img src="/profile.jpg" alt="Murshid VP" style={heroImage} />
+            <img src="/profile.jpg" alt="Murshid VP" style={heroImage(isMobile)} />
 
             {/* SOCIALS */}
             <IconContext.Provider value={{ color: "#000", size: "20px" }}>
-            <div style={socials}>
+            <div style={socials(isMobile)}>
               <a href="https://www.linkedin.com/in/murshid-vp-554244204/" target="_blank" rel="noreferrer">
                 <FaLinkedin />
               </a>
@@ -128,26 +146,25 @@ const ctaBtn = {
   fontWeight: 600,
 };
 
-const imageWrapper = {
+const imageWrapper = (isMobile) => ({
   position: "relative",
-  right: '80px'
-};
+  right: isMobile ? "0px" : "80px",
+});
 
-const heroImage = {
-  width: "360px",
-  height: "460px",
+const heroImage = (isMobile) => ({
+  width: isMobile ? "260px" : "360px",
+  height: isMobile ? "320px" : "460px",
   objectFit: "cover",
-  border: "3px solid #rgb(204, 186, 175)",
-};
+});
 
-const socials = {
-  color: "#000", // ✅ must be a string
-  position: "absolute",
-  right: "-48px",
-  top: "50%",
-  transform: "translateY(-50%)",
+const socials = (isMobile) => ({
+  position: isMobile ? "static" : "absolute",
+  right: isMobile ? "0" : "-48px",
+  top: isMobile ? "auto" : "50%",
+  transform: isMobile ? "none" : "translateY(-50%)",
   display: "flex",
-  flexDirection: "column",
+  flexDirection: isMobile ? "row" : "column",
   gap: "16px",
-  fontSize: "20px",
-};
+  justifyContent: "center",
+  marginTop: isMobile ? "16px" : "0",
+});

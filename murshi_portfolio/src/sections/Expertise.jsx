@@ -55,10 +55,6 @@ const skills = [
     title: "CI/CD & DevOps Automation",
     desc: "Designs and implements continuous integration and delivery pipelines, automating build, test, and deployment workflows for Python applications. Skilled in configuration management, version control practices, and application logging/monitoring to ensure reliable, repeatable deployments."
   },
-  {
-    title: "CI/CD & DevOps Automation",
-    desc: "Designs and implements continuous integration and delivery pipelines, automating build, test, and deployment workflows for Python applications. Skilled in configuration management, version control practices, and application logging/monitoring to ensure reliable, repeatable deployments."
-  }
 ];
 
 

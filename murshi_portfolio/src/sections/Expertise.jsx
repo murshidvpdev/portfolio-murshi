@@ -50,6 +50,10 @@ const skills = [
   {
     title: "Frontend & Reporting",
     desc: "HTML, CSS, JavaScript with jQuery and charting libraries to build analytical dashboards and reporting views"
+  },
+  {
+    title: "CI/CD & DevOps Automation",
+    desc: "Designs and implements continuous integration and delivery pipelines, automating build, test, and deployment workflows for Python applications. Skilled in configuration management, version control practices, and application logging/monitoring to ensure reliable, repeatable deployments."
   }
 ];
 

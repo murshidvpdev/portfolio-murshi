@@ -6,6 +6,8 @@ import Projects from "./sections/Projects";
 import Experience from "./sections/Experience";
 import Achievements from "./sections/Achievements";
 import Contact from "./sections/Contact";
+import Footer from "./sections/Footer";
+import BackToTop from "./components/BackToTop";
 import { Toaster } from "react-hot-toast";
 
 export default function App() {
@@ -19,6 +21,8 @@ export default function App() {
       <Experience />
       <Achievements />
       <Contact />
+      <Footer />
+      <BackToTop />
     </>
   );
 }

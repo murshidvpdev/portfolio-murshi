@@ -1,5 +1,5 @@
 .achievements-section {
-  background: linear-gradient(180deg, #ffffff, #f8fafc);
+  background: linear-gradient(180deg, var(--bg-primary), var(--bg-secondary));
   padding: 64px 0;
 }
 
@@ -12,12 +12,12 @@
 .achievements-title {
   font-size: 2rem;
   font-weight: 600;
-  color: #0f172a;
+  color: var(--text-primary);
 }
 
 .achievements-subtitle {
   font-size: 0.9rem;
-  color: #64748b;
+  color: var(--text-muted);
   margin-top: 4px;
 }
 
@@ -30,37 +30,45 @@
 }
 
 .achievement-card {
-  background: #ffffff;
-  border: 1px solid rgba(15, 23, 42, 0.08);
+  background: var(--surface);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
   border-radius: 18px;
   padding: 22px 24px;        /* slightly tighter */
   display: flex;
   flex-direction: column;
+  transition: all 0.25s ease;
+}
+
+.achievement-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-strong);
+  box-shadow: var(--glow-strong);
 }
 
 
 .achievement-card h3 {
   font-size: 1.05rem;
-  color: #0f172a;
+  color: var(--text-primary);
   margin-bottom: 6px;
 }
 
 .achievement-org {
   display: block;
   font-size: 0.85rem;
-  color: #2563eb;
+  color: var(--accent-light);
   margin-bottom: 12px;
 }
 
 .achievement-card p {
   font-size: 0.95rem;
-  color: #475569;
+  color: var(--text-secondary);
   line-height: 1.6;
 }
 
 .achievement-list {
   padding-left: 18px;
-  color: #475569;
+  color: var(--text-secondary);
   line-height: 1.6;
 }
 
@@ -71,13 +79,21 @@
 /* Award image */
 .achievement-image {
   margin-bottom: 16px;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
 .achievement-image img {
   width: 100%;
   height: auto;
+  display: block;
   border-radius: 12px;
-  border: 1px solid rgba(15, 23, 42, 0.08);
+  border: 1px solid var(--border-strong);
+  transition: transform 0.4s ease;
+}
+
+.achievement-card:hover .achievement-image img {
+  transform: scale(1.08);
 }
 
 @media (max-width: 768px) {

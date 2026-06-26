@@ -1,5 +1,5 @@
 .expertise-section {
-  background: #f8fafc; /* light gray, aligns with white home */
+  background: var(--bg-primary);
   padding: 80px 0;
 }
 
@@ -21,25 +21,27 @@
 
 
 .expertise-card {
-  background: #ffffff;
+  position: relative;
+  background: var(--surface);
+  backdrop-filter: blur(12px);
   border-radius: 16px;
   padding: 28px;
-  border: 1px solid #e5e7eb;
+  border: 1px solid var(--border);
   box-shadow:
-    0 4px 12px rgba(0, 0, 0, 0.04);
+    0 4px 12px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease;
 }
 
 
 
 .expertise-card h4 {
-  color: #0f172a; /* dark slate */
+  color: var(--text-primary);
   font-size: 1.1rem;
   margin-bottom: 10px;
 }
 
 .expertise-card p {
-  color: #475569; /* readable gray */
+  color: var(--text-secondary);
   font-size: 0.95rem;
   line-height: 1.6;
 }
@@ -47,9 +49,8 @@
 
 .expertise-card:hover {
   transform: translateY(-6px);
-  border-color: #2563eb;
-  box-shadow:
-    0 12px 28px rgba(37, 99, 235, 0.15);
+  border-color: var(--border-strong);
+  box-shadow: var(--glow-strong);
 }
 
 .expertise-card::before {
@@ -59,7 +60,7 @@
   top: 24px;
   width: 4px;
   height: 36px;
-  background: #2563eb;
+  background: var(--accent-gradient);
   border-radius: 4px;
   opacity: 0;
   transition: opacity 0.3s ease;
@@ -73,13 +74,12 @@
 .expertise-title {
   text-align: center;
   font-size: 2.4rem;
-  color: #0f172a;
+  color: var(--text-primary);
   margin-bottom: 48px;
 }
 
 .expertise-subtitle {
   text-align: center;
-  color: #64748b;
+  color: var(--text-secondary);
   margin-bottom: 60px;
 }
-

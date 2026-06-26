@@ -24,6 +24,7 @@ export default function Achievements() {
               <img
                 src="/spotlight-award.jpg"
                 alt="Spotlight Award"
+                loading="lazy"
               />
             </div>
 
@@ -42,7 +43,7 @@ export default function Achievements() {
           {/* Client Recognition Card */}
           <motion.div className="achievement-card" whileHover={{ y: -4 }}>
             <div className="achievement-image">
-                <img src="/client-engagement.jpg" alt="Client Engagements" />
+                <img src="/client-engagement.jpg" alt="Client Engagements" loading="lazy" />
             </div>
 
             <h3>Client Onsite Engagements</h3>
@@ -63,7 +64,7 @@ export default function Achievements() {
           {/* Professional Impact Card */}
           <motion.div className="achievement-card" whileHover={{ y: -4 }}>
             <div className="achievement-image">
-                <img src="/professional-impact.jpg" alt="Professional Impact" />
+                <img src="/professional-impact.jpg" alt="Professional Impact" loading="lazy" />
             </div>
 
             <h3>Professional Impact</h3>

@@ -1,5 +1,5 @@
 .contact-section {
-  background: linear-gradient(180deg, #ffffff, #f8fafc);
+  background: linear-gradient(180deg, var(--bg-primary), var(--bg-secondary));
   padding: 80px 0;
   padding-top: 20vh;
 }
@@ -17,34 +17,37 @@
 /* Text side */
 .contact-text h2 {
   font-size: 2.2rem;
-  color: #0f172a;
+  color: var(--text-primary);
 }
 
 .contact-text p {
   margin-top: 10px;
-  color: #475569;
+  color: var(--text-secondary);
   line-height: 1.6;
 }
 
 .contact-meta {
   margin-top: 32px;
   font-size: 0.95rem;
+  color: var(--text-secondary);
 }
 
 .contact-meta a {
-  color: #2563eb;
+  color: var(--accent-light);
   text-decoration: none;
 }
 
 /* Form */
 .contact-form {
-  background: #ffffff;
-  border: 1px solid rgba(15, 23, 42, 0.08);
+  background: var(--surface);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
   border-radius: 20px;
   padding: 32px;
   display: flex;
   flex-direction: column;
   gap: 22px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
 }
 
 /* Floating labels */
@@ -58,21 +61,29 @@
   padding: 14px 14px;
   font-size: 0.95rem;
   border-radius: 12px;
-  border: 1px solid rgba(15, 23, 42, 0.15);
+  border: 1px solid var(--border);
   outline: none;
-  background: #ffffff;
+  background: var(--surface-solid);
+  color: var(--text-primary);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--border-strong);
+  box-shadow: var(--glow-soft);
 }
 
 .form-group label {
   position: absolute;
   top: 50%;
   left: 14px;
-  color: #64748b;
+  color: var(--text-muted);
   font-size: 0.85rem;
   transform: translateY(-50%);
   pointer-events: none;
   transition: all 0.2s ease;
-  background: #ffffff;
+  background: var(--surface-solid);
   padding: 0 6px;
 }
 
@@ -83,7 +94,7 @@
 .form-group textarea:not(:placeholder-shown) + label {
   top: -6px;
   font-size: 0.75rem;
-  color: #0f172a;
+  color: var(--accent-light);
 }
 
 /* Button */
@@ -92,7 +103,7 @@
   padding: 14px;
   border-radius: 14px;
   border: none;
-  background: #000000;   /* BLACK BUTTON */
+  background: var(--accent-gradient);
   color: #ffffff;
   font-size: 0.95rem;
   font-weight: 500;
@@ -102,7 +113,7 @@
 
 .contact-form button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+  box-shadow: var(--glow-strong);
 }
 
 /* Responsive */

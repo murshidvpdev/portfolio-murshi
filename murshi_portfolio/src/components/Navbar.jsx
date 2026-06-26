@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import { FaBars, FaTimes } from "react-icons/fa";
 import useScrollSpy from "../hooks/useScrollSpy";
 
@@ -43,6 +44,13 @@ export default function Navbar() {
                   }}
                 >
                   {label}
+                  {isActive && (
+                    <motion.span
+                      layoutId="nav-underline"
+                      style={navUnderline}
+                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                    />
+                  )}
                 </a>
               );
             })}
@@ -106,15 +114,14 @@ const navStyle = {
   display: "flex",
   justifyContent: "space-between",
   alignItems: "center",
-  background: "rgba(242, 242, 242, 0.85)",
-  backdropFilter: "blur(10px)",
+  background: "transparent",
   zIndex: 100,
 };
 
 const logo = {
   fontSize: "20px",
   fontWeight: 700,
-  color: "#111",
+  color: "var(--text-primary)",
   margin: 0,
 };
 
@@ -130,26 +137,40 @@ const links = {
 };
 
 const linkStyle = {
-  color: "#444",
+  position: "relative",
+  color: "var(--text-secondary)",
   textDecoration: "none",
   fontSize: "15px",
   fontWeight: 500,
   paddingBottom: "6px",
+  transition: "color 0.2s ease",
 };
 
 const activeLink = {
-  color: "#111",
-  borderBottom: "2px solid #111",
+  color: "var(--accent-light)",
+  textShadow: "0 0 12px rgba(59, 130, 246, 0.6)",
+};
+
+const navUnderline = {
+  position: "absolute",
+  left: 0,
+  right: 0,
+  bottom: 0,
+  height: "2px",
+  borderRadius: "2px",
+  background: "var(--accent-gradient)",
+  boxShadow: "0 0 12px rgba(59, 130, 246, 0.6)",
 };
 
 const ctaBtn = {
   padding: "10px 18px",
-  background: "#111",
+  background: "var(--accent-gradient)",
   color: "#fff",
-  borderRadius: "4px",
+  borderRadius: "6px",
   fontSize: "14px",
   fontWeight: 600,
   textDecoration: "none",
+  boxShadow: "var(--glow-soft)",
 };
 
 /* MOBILE */
@@ -161,13 +182,13 @@ const mobileNav = {
   display: "flex",
   justifyContent: "space-between",
   alignItems: "center",
-  background: "rgba(242, 242, 242, 0.95)",
-  backdropFilter: "blur(10px)",
+  background: "transparent",
   zIndex: 100,
 };
 
 const menuBtn = {
   fontSize: "22px",
+  color: "var(--text-primary)",
   background: "none",
   border: "none",
   cursor: "pointer",
@@ -178,20 +199,22 @@ const mobileMenu = {
   top: "64px",
   left: 0,
   width: "100%",
-  background: "#fff",
+  background: "var(--surface-solid)",
+  borderBottom: "1px solid var(--border)",
   display: "flex",
   flexDirection: "column",
-  boxShadow: "0 10px 30px rgba(0,0,0,0.1)",
+  boxShadow: "0 10px 30px rgba(0,0,0,0.5)",
 };
 
 const mobileLink = {
   padding: "14px 24px",
   textDecoration: "none",
-  color: "#111",
+  color: "var(--text-primary)",
   fontSize: "16px",
   fontWeight: 500,
 };
 
 const mobileCta = {
+  color: "var(--accent-light)",
   fontWeight: 600,
 };

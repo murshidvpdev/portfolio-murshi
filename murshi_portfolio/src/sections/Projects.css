@@ -97,3 +97,10 @@
 .projects-card:hover::before {
   opacity: 1;
 }
+
+@media (max-width: 768px) {
+  .projects-section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}

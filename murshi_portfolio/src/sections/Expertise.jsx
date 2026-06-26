@@ -55,6 +55,10 @@ const skills = [
     title: "CI/CD & DevOps Automation",
     desc: "Designs and implements continuous integration and delivery pipelines, automating build, test, and deployment workflows for Python applications. Skilled in configuration management, version control practices, and application logging/monitoring to ensure reliable, repeatable deployments."
   },
+  {
+    title: "LangChain & LLM Development",
+    desc: "I build LLM-powered applications using LangChain's composable architecture, integrating multiple model providers, embeddings, and vector stores to create retrieval-augmented and chained AI workflows."
+  }
 ];
 
 

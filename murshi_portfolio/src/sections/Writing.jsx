@@ -4,10 +4,10 @@ export default function Writing({ posts }) {
   if (!posts?.length) return null;
   const sorted = [...posts].sort((a, b) => b.date.localeCompare(a.date));
   return (
-    <section id="writing" className="section wrap">
+    <section id="blog" className="section wrap">
       <header className="section-head">
-        <h2>Writing</h2>
-        <p>Notes from building: what worked, what broke, and what I'd do again. Also posted on LinkedIn.</p>
+        <h2>Blog</h2>
+        <p>Notes from building: what worked, what broke, and what I'd do again.</p>
       </header>
       <div className="posts">
         {sorted.map((p) => (

@@ -4,7 +4,7 @@ const LINKS = [
   ["route", "Route"],
   ["work", "Work"],
   ["builds", "Builds"],
-  ["writing", "Writing"],
+  ["blog", "Blog"],
   ["skills", "Skills"],
   ["experience", "Experience"],
   ["contact", "Contact"],
@@ -12,7 +12,7 @@ const LINKS = [
 
 export default function Header({ profile, hasPosts }) {
   const [open, setOpen] = useState(false);
-  const links = LINKS.filter(([id]) => hasPosts || id !== "writing");
+  const links = LINKS.filter(([id]) => hasPosts || id !== "blog");
   return (
     <header className="header">
       <div className="wrap header-row">

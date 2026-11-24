@@ -48,7 +48,7 @@ export default function App() {
       <Header profile={profile} hasPosts={posts.length > 0} />
       <main id="main">
         {postSlug ? (
-          <Post post={posts.find((p) => slug(p.title) === postSlug)} author={profile.name} />
+          <Post post={posts.find((p) => slug(p.title) === postSlug)} author={profile.name} linkedin={profile.linkedin} />
         ) : (
           <>
             <Hero profile={profile} proof={data.proof} route={data.route} />

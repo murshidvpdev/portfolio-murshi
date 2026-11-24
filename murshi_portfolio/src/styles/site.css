@@ -350,6 +350,10 @@ mark { background: var(--marker); color: var(--marker-ink); padding: 2px 7px; fo
   .building li { grid-template-columns: 1fr; gap: 4px; }
   .cta-row .btn { flex: 1 1 auto; }
   .form { padding: 20px; }
+  /* thumb-sized tap targets and readable labels on phones */
+  .brand, .build-link, .read, .building a.mono, .more a, .back { display: inline-flex; align-items: center; min-height: 44px; }
+  .report-bar, .fields-head { font-size: 0.75rem; }
+  .page-ref, .page-label { font-size: 0.72rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -1,119 +1,44 @@
-import Section from "../components/Section";
-import { motion } from "framer-motion";
 import emailjs from "emailjs-com";
 import toast from "react-hot-toast";
 import { useState } from "react";
-import "./Contact.css";
 
-export default function Contact() {
-  const [loading, setLoading] = useState(false);
+export default function Contact({ profile }) {
+  const [sending, setSending] = useState(false);
+  const env = import.meta.env;
 
-  const sendEmail = (e) => {
-  e.preventDefault();
-
-  // 🛡 Honeypot spam protection
-  if (e.target.website.value) return;
-
-  setLoading(true);
-
-
-  // 1️⃣ Send message to YOU
-  emailjs
-    .sendForm(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATEC_ID,
-        e.target,
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-    )
-    .then(() => {
-      // 2️⃣ Auto-reply to sender
-      return emailjs.sendForm(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATER_ID,
-        e.target,
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-
-      );
-    })
-    .then(() => {
-      toast.success("Message sent successfully!");
-      e.target.reset();
-    })
-    .catch(() => {
-      toast.error("Failed to send message. Please try again.");
-    })
-    .finally(() => {
-      setLoading(false);
-    });
-};
-
+  const send = (e) => {
+    e.preventDefault();
+    if (e.target.website.value) return; // honeypot
+    setSending(true);
+    emailjs
+      .sendForm(env.VITE_EMAILJS_SERVICE_ID, env.VITE_EMAILJS_TEMPLATEC_ID, e.target, env.VITE_EMAILJS_PUBLIC_KEY)
+      .then(() => emailjs.sendForm(env.VITE_EMAILJS_SERVICE_ID, env.VITE_EMAILJS_TEMPLATER_ID, e.target, env.VITE_EMAILJS_PUBLIC_KEY))
+      .then(() => {
+        toast.success("Message sent. I'll reply by email.");
+        e.target.reset();
+      })
+      .catch(() => toast.error(`Message not sent. Email me directly at ${profile.email}.`))
+      .finally(() => setSending(false));
+  };
 
   return (
-    <section id="contact" className="contact-section">
-      <Section>
-        <div className="contact-wrapper">
-          {/* Left */}
-          <div className="contact-text">
-            <h2>Let’s Connect</h2>
-            <p>
-              Have a project, opportunity, or idea in mind?
-              I’m always open to discussing meaningful work and collaborations.
-            </p>
-
-            <div className="contact-meta">
-              <p>
-                <strong>Email</strong><br />
-                <a href="mailto:murshidveypey790@gmail.com">
-                  murshidvp.dev@gmail.com
-                </a>
-              </p>
-              <p>
-                <strong>Phone</strong><br />
-                +91 9995332723
-              </p>
-              <p>
-                <strong>Location</strong><br />
-                Kerala, India
-              </p>
-            </div>
-          </div>
-
-          {/* Form */}
-          <motion.form
-            className="contact-form"
-            onSubmit={sendEmail}
-            whileHover={{ scale: 1.01 }}
-          >
-            {/* Honeypot field (hidden) */}
-            <input
-              type="text"
-              name="website"
-              tabIndex="-1"
-              autoComplete="off"
-              className="honeypot"
-            />
-
-            <div className="form-group">
-              <input type="text" name="name" required />
-              <label>Your Name</label>
-            </div>
-
-            <div className="form-group">
-              <input type="email" name="email" required />
-              <label>Your Email</label>
-            </div>
-
-            <div className="form-group">
-              <textarea name="message" rows="4" required />
-              <label>Your Message</label>
-            </div>
-
-            <button type="submit" disabled={loading}>
-              {loading ? <span className="spinner" /> : "Send Message"}
-            </button>
-          </motion.form>
-        </div>
-      </Section>
+    <section id="contact" className="section wrap contact">
+      <div>
+        <h2>Let's talk</h2>
+        <p>Hiring for an AI or LLM engineering role in the UAE, or have a document-heavy problem? Send a note.</p>
+        <dl className="contact-list">
+          <div><dt className="mono">email</dt><dd><a href={`mailto:${profile.email}`}>{profile.email}</a></dd></div>
+          <div><dt className="mono">phone</dt><dd><a href={`tel:${profile.phone.replace(/\s/g, "")}`}>{profile.phone}</a></dd></div>
+          <div><dt className="mono">based in</dt><dd>{profile.location}</dd></div>
+        </dl>
+      </div>
+      <form className="form" onSubmit={send}>
+        <input type="text" name="website" tabIndex="-1" autoComplete="off" className="honeypot" aria-hidden="true" />
+        <label>Your name<input type="text" name="name" required /></label>
+        <label>Your email<input type="email" name="email" required /></label>
+        <label>Message<textarea name="message" rows="5" required /></label>
+        <button className="btn" type="submit" disabled={sending}>{sending ? "Sending…" : "Send message"}</button>
+      </form>
     </section>
   );
 }

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-24",
+  "updated": "2026-11-25",
   "profile": {
     "name": "Murshid VP",
     "headline": "AI & Forward Deployed Engineer — Python · Backend · UI · Applied LLMs",
@@ -427,6 +427,11 @@
       "date": "2026-11-08",
       "body": "I've been digging into the Forward Deployed Engineer (FDE) role this week, and it made me rethink how I describe my own work.\n\nMy day job is backend: FastAPI and Flask services, PostgreSQL, Celery and Redis queues, Docker, and more recently LLM/RAG features. I've also done client-onsite engagements, so working directly with the people who use what I build isn't new to me.\n\nAs I understand it, an FDE takes that much further. You embed with the customer, learn their real problem, and build the solution on their side. It's less \"here's the ticket\" and more \"figure out what needs to exist, then ship it.\"\n\nWhat stood out to me is that the technical skills I already use map well:\n- Designing APIs and data models that hold up in production\n- Making async pipelines reliable\n- Getting an LLM/RAG system to give useful answers on messy, real-world data\n\nThe part I want to go deeper on is the other half: scoping vague problems, communicating with non-engineers, and owning the outcome and not just the code.\n\nI'm still early in this research, so I'd like to hear from people who've worked as or alongside FDEs. What separates a good one from a great one?\n\n#ForwardDeployedEngineer #BackendEngineering #Python #CareerGrowth",
       "linkedin_url": "https://www.linkedin.com/feed/update/urn:li:share:7525236320516866048/"
+    },
+    {
+      "title": "Fixing RAG hallucinations with a grading and web-fallback layer",
+      "date": "2026-11-25",
+      "body": "When we built a basic RAG system, it had one clear problem. If the answer wasn't in the knowledge base, the model still answered. It filled the gap with something that sounded right but wasn't.\n\nA basic RAG pipeline has no way to say \"what I retrieved is not good enough.\" It takes the top results and passes them to the LLM, whether they are relevant or not.\n\nSo I added two more layers on top of the retrieval step.\n\nThe first layer is a grader. An agent looks at what came back from the knowledge base and rates how well it answers the question. It asks whether the content is actually relevant, or only loosely similar.\n\nThe second layer is the fallback, and it depends on that rating:\n\n- If the content is good, the system uses it and generates the answer from it.\n- If the content is weak, the agent rewrites the query and tries again.\n- If that still isn't enough, it searches the web with a tool like Tavily, reads the results, and answers from those.\n\nThe final answer is then built only from content that passed the check, either from the knowledge base or from fresh web results.\n\nThis helps with two things. The model is less likely to hallucinate, because it no longer answers from weak context. And answers are less likely to be out of date, because the web search covers what the knowledge base is missing or has stale.\n\nWhat I learned is that retrieval quality needs to be checked on every question. Grading the context before generating the answer made the system more honest about what it knows. When it doesn't know, it now goes and looks."
     }
   ]
 }

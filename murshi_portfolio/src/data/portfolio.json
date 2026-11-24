@@ -15,11 +15,31 @@
     "photo": "/profile.jpg"
   },
   "proof": [
-    {"field": "experience", "value": "5+ years", "note": "production AI and backend systems"},
-    {"field": "extraction_accuracy", "value": "97–98%", "note": "document AI, banking and US tax"},
-    {"field": "volume", "value": "millions of documents", "note": "100K+ a month"},
-    {"field": "tax_return_time", "value": "days → minutes", "note": "K-1 / K-3, 250+ fields"},
-    {"field": "procurement_turnaround", "value": "~95% faster", "note": "AI supplier discovery"}
+    {
+      "field": "experience",
+      "value": "5+ years",
+      "note": "production AI and backend systems"
+    },
+    {
+      "field": "extraction_accuracy",
+      "value": "97–98%",
+      "note": "document AI, banking and US tax"
+    },
+    {
+      "field": "volume",
+      "value": "millions of documents",
+      "note": "100K+ a month"
+    },
+    {
+      "field": "tax_return_time",
+      "value": "days → minutes",
+      "note": "K-1 / K-3, 250+ fields"
+    },
+    {
+      "field": "procurement_turnaround",
+      "value": "~95% faster",
+      "note": "AI supplier discovery"
+    }
   ],
   "work_projects": [
     {
@@ -27,101 +47,275 @@
       "client": "EVOSTEL · Saudi Arabia",
       "desc": "End-to-end RFQ → quote → PO workflow with multi-stage approvals and procurement analytics for industrial clients. AI supplier discovery takes a manufacturer and part number and returns the top 5 suppliers with a cascading geographic priority (Saudi Arabia → GCC → Global), so local suppliers come first for delivery time and cost.",
       "impact": "Procurement turnaround cut by ~95%",
-      "stack": ["OpenAI", "Gemini", "Llama", "FastAPI", "Celery", "Redis", "Docker"]
+      "stack": [
+        "OpenAI",
+        "Gemini",
+        "Llama",
+        "FastAPI",
+        "Celery",
+        "Redis",
+        "Docker"
+      ]
     },
     {
       "title": "Enterprise Document AI",
       "client": "Citibank · HSBC",
       "desc": "OCR with ML-driven field extraction over millions of financial documents, with automated digital-signature validation, validation rules and audit-ready outputs.",
       "impact": "97–98% accuracy · manual review down >90%",
-      "stack": ["OCR", "ML extraction", "Python", "PostgreSQL", "Multiprocessing"]
+      "stack": [
+        "OCR",
+        "ML extraction",
+        "Python",
+        "PostgreSQL",
+        "Multiprocessing"
+      ]
     },
     {
       "title": "K-1 / K-3 Tax Form Extraction",
       "client": "DOZ · USA",
       "desc": "AI-powered document extraction mapping 250+ fields across IRS K-1 and K-3 schedules, unblocking peak-season throughput for the client.",
       "impact": "Days → minutes per return at ~97% accuracy",
-      "stack": ["Document AI", "Template + rule parsing", "Python"]
+      "stack": [
+        "Document AI",
+        "Template + rule parsing",
+        "Python"
+      ]
     },
     {
       "title": "Document Classification Automation",
       "client": "HSBC · India",
       "desc": "Scheduler-driven ingestion with automated decision workflows for document classification, centralized rules and exception handling.",
       "impact": "Manual review down ~85%",
-      "stack": ["Python", "Schedulers", "Rule engines"]
+      "stack": [
+        "Python",
+        "Schedulers",
+        "Rule engines"
+      ]
     },
     {
       "title": "LLM Chatbot & NLP Workflows",
       "client": "Production services",
       "desc": "GPT, Gemini and Llama behind production services for chat, document Q&A and extraction, with prompt engineering, response validation and fallback between hosted and self-hosted models. A companion TF-IDF + Word2Vec sentiment service classifies customer feedback.",
       "impact": "Multi-model, with graceful fallback",
-      "stack": ["OpenAI", "Gemini", "Llama", "TF-IDF", "Word2Vec", "FastAPI"]
+      "stack": [
+        "OpenAI",
+        "Gemini",
+        "Llama",
+        "TF-IDF",
+        "Word2Vec",
+        "FastAPI"
+      ]
     },
     {
       "title": "Customer Document Validation POC",
       "client": "Bank Islam · Malaysia",
       "desc": "Proof of concept for onboarding-document and digital-signature validation with compliance-driven rules, presented onsite to stakeholders.",
       "impact": "Delivered onsite in Malaysia",
-      "stack": ["Python", "OCR", "Signature validation"]
+      "stack": [
+        "Python",
+        "OCR",
+        "Signature validation"
+      ]
     }
   ],
   "personal_projects": [
     {
       "title": "Life Agents",
       "desc": "My personal multi-agent assistant. A supervisor agent routes my iMessage and Telegram messages to specialist agents for routine, sleep, fitness, money, news, job search, LinkedIn and a learning log. An independent reviewer agent plus plain-code checks block drafts with invented claims or client names.",
-      "stack": ["Claude Agent SDK", "MCP", "LangGraph", "FastAPI", "SQLAlchemy", "APScheduler"],
+      "stack": [
+        "Claude Agent SDK",
+        "MCP",
+        "LangGraph",
+        "FastAPI",
+        "SQLAlchemy",
+        "APScheduler"
+      ],
       "link": "",
-      "status": "Running daily"
+      "status": "Running daily",
+      "repo": "life-agents"
     },
     {
       "title": "Procurement RAG App",
       "desc": "Natural-language questions over procurement spreadsheets. A LangGraph router sends each question down a SQL, semantic or hybrid path, so numeric answers come from guarded, read-only SQL instead of vector search.",
-      "stack": ["FastAPI", "pgvector (HNSW)", "BGE embeddings", "Llama on Groq", "Redis semantic cache", "Langfuse"],
+      "stack": [
+        "FastAPI",
+        "pgvector (HNSW)",
+        "BGE embeddings",
+        "Llama on Groq",
+        "Redis semantic cache",
+        "Langfuse"
+      ],
       "link": "",
-      "status": "Working"
+      "status": "Working",
+      "repo": "RAG_App_Procurement"
     },
     {
       "title": "ai_module",
       "desc": "A provider-agnostic Python package that adds RAG, agents and LLM calls to any app through one configurable object: multi-tenant RAG over pgvector with hybrid search, LangGraph tool-calling agents, and multi-provider adapters with retry and fallback.",
-      "stack": ["Python", "LangGraph", "pgvector", "SQLAlchemy async", "Redis"],
+      "stack": [
+        "Python",
+        "LangGraph",
+        "pgvector",
+        "SQLAlchemy async",
+        "Redis"
+      ],
       "link": "",
-      "status": "Working"
+      "status": "Working",
+      "repo": "Ai-implementation-arachitecture"
     },
     {
       "title": "Daybook",
       "desc": "A personal ledger for routines, habits, money and fitness, with an MCP server (OAuth) so Claude can read and log data as the signed-in user.",
-      "stack": ["FastAPI", "PostgreSQL", "MCP", "React 19", "TypeScript"],
+      "stack": [
+        "FastAPI",
+        "PostgreSQL",
+        "MCP",
+        "React 19",
+        "TypeScript"
+      ],
       "link": "https://github.com/murshidvpdev/daybook",
-      "status": "Working"
+      "status": "Working",
+      "repo": "daybook"
     },
     {
       "title": "JobSeek",
       "desc": "Job aggregator with scrapers for LinkedIn, Indeed, Naukri and Jobstreet, an application tracker, and AI cover letters with Claude and prompt caching.",
-      "stack": ["FastAPI", "Celery", "Redis", "Selenium", "React", "Docker Compose"],
+      "stack": [
+        "FastAPI",
+        "Celery",
+        "Redis",
+        "Selenium",
+        "React",
+        "Docker Compose"
+      ],
       "link": "",
-      "status": "Working"
+      "status": "Working",
+      "repo": "jobseek"
     },
     {
       "title": "Falio RFQ Dashboard",
       "desc": "Full-stack RFQ dashboard: upload and parse Excel/PDF documents, review them, and manage users and roles through permission-gated admin pages.",
-      "stack": ["FastAPI", "SQLAlchemy async", "PostgreSQL", "React", "Tailwind"],
+      "stack": [
+        "FastAPI",
+        "SQLAlchemy async",
+        "PostgreSQL",
+        "React",
+        "Tailwind"
+      ],
       "link": "https://github.com/murshidvpdev/falio-rfq-dashboard",
-      "status": "In progress"
+      "status": "In progress",
+      "repo": "falio-rfq-dashboard"
     }
   ],
   "skills": {
     "production": [
-      {"group": "AI / LLMs", "items": ["OpenAI (GPT)", "Google Gemini", "Llama", "RAG (hybrid SQL + vector)", "pgvector", "Embeddings", "LangGraph", "Semantic caching", "Langfuse", "Prompt engineering", "Multi-model orchestration"]},
-      {"group": "ML & NLP", "items": ["Regression", "Classification", "Feature engineering", "Model deployment", "TF-IDF", "Word2Vec", "Sentiment analysis", "OCR + ML field extraction"]},
-      {"group": "Backend", "items": ["Python", "FastAPI", "Flask", "Django", "REST APIs", "Microservices", "Celery", "Redis", "Multiprocessing"]},
-      {"group": "Data", "items": ["PostgreSQL (indexing, CTEs, window functions)", "Pandas", "NumPy", "EDA", "Streamlit", "Matplotlib"]},
-      {"group": "Delivery", "items": ["Docker", "CI/CD", "Git", "Linux", "Agile", "Client onsite delivery"]}
+      {
+        "group": "AI / LLMs",
+        "items": [
+          "OpenAI (GPT)",
+          "Google Gemini",
+          "Llama",
+          "RAG (hybrid SQL + vector)",
+          "pgvector",
+          "Embeddings",
+          "LangGraph",
+          "Semantic caching",
+          "Langfuse",
+          "Prompt engineering",
+          "Multi-model orchestration"
+        ]
+      },
+      {
+        "group": "ML & NLP",
+        "items": [
+          "Regression",
+          "Classification",
+          "Feature engineering",
+          "Model deployment",
+          "TF-IDF",
+          "Word2Vec",
+          "Sentiment analysis",
+          "OCR + ML field extraction"
+        ]
+      },
+      {
+        "group": "Backend",
+        "items": [
+          "Python",
+          "FastAPI",
+          "Flask",
+          "Django",
+          "REST APIs",
+          "Microservices",
+          "Celery",
+          "Redis",
+          "Multiprocessing"
+        ]
+      },
+      {
+        "group": "Data",
+        "items": [
+          "PostgreSQL (indexing, CTEs, window functions)",
+          "Pandas",
+          "NumPy",
+          "EDA",
+          "Streamlit",
+          "Matplotlib"
+        ]
+      },
+      {
+        "group": "Delivery",
+        "items": [
+          "Docker",
+          "CI/CD",
+          "Git",
+          "Linux",
+          "Agile",
+          "Client onsite delivery"
+        ]
+      }
     ],
     "personal": [
-      {"group": "Agents", "items": ["Claude API (tool use, prompt caching)", "Claude Agent SDK", "MCP servers", "Multi-agent supervisors", "LLM-as-reviewer gates"]},
-      {"group": "LLM tooling", "items": ["LangChain", "FAISS", "ChromaDB", "Ollama", "Groq", "BGE embeddings"]},
-      {"group": "Backend", "items": ["SQLAlchemy 2.0 async", "Alembic", "APScheduler", "JWT auth", "MinIO (S3)"]},
-      {"group": "Frontend", "items": ["React", "Vite", "TypeScript", "Tailwind CSS"]}
+      {
+        "group": "Agents",
+        "items": [
+          "Claude API (tool use, prompt caching)",
+          "Claude Agent SDK",
+          "MCP servers",
+          "Multi-agent supervisors",
+          "LLM-as-reviewer gates"
+        ]
+      },
+      {
+        "group": "LLM tooling",
+        "items": [
+          "LangChain",
+          "FAISS",
+          "ChromaDB",
+          "Ollama",
+          "Groq",
+          "BGE embeddings"
+        ]
+      },
+      {
+        "group": "Backend",
+        "items": [
+          "SQLAlchemy 2.0 async",
+          "Alembic",
+          "APScheduler",
+          "JWT auth",
+          "MinIO (S3)"
+        ]
+      },
+      {
+        "group": "Frontend",
+        "items": [
+          "React",
+          "Vite",
+          "TypeScript",
+          "Tailwind CSS"
+        ]
+      }
     ]
   },
   "experience": [
@@ -139,18 +333,54 @@
         "Built end-to-end ML pipelines for healthcare and insurance regression and classification models.",
         "Delivered client-onsite engagements at HSBC, Citibank (India) and Bank Islam (Malaysia)."
       ],
-      "skills": ["Python", "FastAPI", "LLMs", "Document AI", "PostgreSQL", "Celery", "Redis", "Docker"]
+      "skills": [
+        "Python",
+        "FastAPI",
+        "LLMs",
+        "Document AI",
+        "PostgreSQL",
+        "Celery",
+        "Redis",
+        "Docker"
+      ]
     }
   ],
   "achievements": [
-    {"title": "Best Performer Award", "org": "Marvel.ai", "year": "2025", "text": "Recognized for client-onsite delivery impact.", "image": ""},
-    {"title": "Spotlight Award", "org": "Marvel.ai", "year": "2024", "text": "Recognized for technical delivery and consistent client impact on document intelligence platforms.", "image": "/spotlight-award.jpg"},
-    {"title": "Client onsite engagements", "org": "HSBC · Citibank (India) · Bank Islam (Malaysia)", "year": "", "text": "Requirement gathering, technical demos, POC presentations, stakeholder workshops and rollout support.", "image": "/client-engagement.jpg"}
+    {
+      "title": "Best Performer Award",
+      "org": "Marvel.ai",
+      "year": "2025",
+      "text": "Recognized for client-onsite delivery impact.",
+      "image": ""
+    },
+    {
+      "title": "Spotlight Award",
+      "org": "Marvel.ai",
+      "year": "2024",
+      "text": "Recognized for technical delivery and consistent client impact on document intelligence platforms.",
+      "image": "/spotlight-award.jpg"
+    },
+    {
+      "title": "Client onsite engagements",
+      "org": "HSBC · Citibank (India) · Bank Islam (Malaysia)",
+      "year": "",
+      "text": "Requirement gathering, technical demos, POC presentations, stakeholder workshops and rollout support.",
+      "image": "/client-engagement.jpg"
+    }
   ],
   "learning": [
-    {"title": "Production agentic RAG: corrective RAG, LLM-as-judge, query rewriting", "status": "learning"},
-    {"title": "Multi-tenant agentic RAG on AWS: Bedrock, S3, guardrails, OpenTelemetry", "status": "learning"},
-    {"title": "Forward Deployed Engineering", "status": "learning"}
+    {
+      "title": "Production agentic RAG: corrective RAG, LLM-as-judge, query rewriting",
+      "status": "learning"
+    },
+    {
+      "title": "Multi-tenant agentic RAG on AWS: Bedrock, S3, guardrails, OpenTelemetry",
+      "status": "learning"
+    },
+    {
+      "title": "Forward Deployed Engineering",
+      "status": "learning"
+    }
   ],
   "education": "BE Computer Science · Hindustan College of Engineering & Technology, Coimbatore · 2016 – 2020"
 }

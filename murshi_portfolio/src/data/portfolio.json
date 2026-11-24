@@ -421,5 +421,12 @@
     }
   ],
   "education": "BE Computer Science · Hindustan College of Engineering & Technology, Coimbatore · 2016 – 2020",
-  "posts": []
+  "posts": [
+    {
+      "title": "What the FDE role made me rethink about my own work",
+      "date": "2026-11-08",
+      "body": "I've been digging into the Forward Deployed Engineer (FDE) role this week, and it made me rethink how I describe my own work.\n\nMy day job is backend: FastAPI and Flask services, PostgreSQL, Celery and Redis queues, Docker, and more recently LLM/RAG features. I've also done client-onsite engagements, so working directly with the people who use what I build isn't new to me.\n\nAs I understand it, an FDE takes that much further. You embed with the customer, learn their real problem, and build the solution on their side. It's less \"here's the ticket\" and more \"figure out what needs to exist, then ship it.\"\n\nWhat stood out to me is that the technical skills I already use map well:\n- Designing APIs and data models that hold up in production\n- Making async pipelines reliable\n- Getting an LLM/RAG system to give useful answers on messy, real-world data\n\nThe part I want to go deeper on is the other half: scoping vague problems, communicating with non-engineers, and owning the outcome and not just the code.\n\nI'm still early in this research, so I'd like to hear from people who've worked as or alongside FDEs. What separates a good one from a great one?\n\n#ForwardDeployedEngineer #BackendEngineering #Python #CareerGrowth",
+      "linkedin_url": "https://www.linkedin.com/feed/update/urn:li:share:7525236320516866048/"
+    }
+  ]
 }

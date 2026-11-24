@@ -26,6 +26,11 @@
       "what": "FastAPI, Flask and Django microservices on PostgreSQL, with Celery and Redis for heavy batch work."
     },
     {
+      "role": "DevOps engineer",
+      "years": "",
+      "what": "Containerized AI services with Docker and shipped them through CI/CD pipelines on Linux, with Git-based release workflows."
+    },
+    {
       "role": "UI designer",
       "years": "",
       "what": "React interfaces, dashboards and reporting views, including this site."
@@ -316,7 +321,7 @@
         ]
       },
       {
-        "group": "Delivery",
+        "group": "DevOps & delivery",
         "items": [
           "Docker",
           "CI/CD",

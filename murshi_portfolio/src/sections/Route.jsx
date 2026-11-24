@@ -5,7 +5,7 @@ export default function Route({ steps }) {
     <section id="route" className="section wrap">
       <header className="section-head">
         <h2>My route</h2>
-        <p>Each step added to the last: I still write the Python, the backend and the UI behind the AI I deploy.</p>
+        <p>Each step added to the last: I still write the Python, the backend, the deploy pipeline and the UI behind the AI I ship.</p>
       </header>
       <ol className="route-steps">
         {steps.map((s, i) => (

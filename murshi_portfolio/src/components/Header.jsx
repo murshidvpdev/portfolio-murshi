@@ -1,15 +1,18 @@
 import { useState } from "react";
 
 const LINKS = [
+  ["route", "Route"],
   ["work", "Work"],
   ["builds", "Builds"],
+  ["writing", "Writing"],
   ["skills", "Skills"],
   ["experience", "Experience"],
   ["contact", "Contact"],
 ];
 
-export default function Header({ profile }) {
+export default function Header({ profile, hasPosts }) {
   const [open, setOpen] = useState(false);
+  const links = LINKS.filter(([id]) => hasPosts || id !== "writing");
   return (
     <header className="header">
       <div className="wrap header-row">
@@ -23,7 +26,7 @@ export default function Header({ profile }) {
           {open ? "Close" : "Menu"}
         </button>
         <nav id="site-nav" className={open ? "nav open" : "nav"}>
-          {LINKS.map(([id, label]) => (
+          {links.map(([id, label]) => (
             <a key={id} href={`#${id}`} onClick={() => setOpen(false)}>{label}</a>
           ))}
           <a className="btn btn-small" href={profile.resume} target="_blank" rel="noreferrer">

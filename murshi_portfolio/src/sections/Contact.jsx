@@ -25,7 +25,7 @@ export default function Contact({ profile }) {
     <section id="contact" className="section wrap contact">
       <div>
         <h2>Let's talk</h2>
-        <p>Hiring for an AI or LLM engineering role in the UAE, or have a document-heavy problem? Send a note.</p>
+        <p>Hiring for an AI or LLM engineering role, anywhere in the world, or have a document-heavy problem? Send a note.</p>
         <dl className="contact-list">
           <div><dt className="mono">email</dt><dd><a href={`mailto:${profile.email}`}>{profile.email}</a></dd></div>
           <div><dt className="mono">phone</dt><dd><a href={`tel:${profile.phone.replace(/\s/g, "")}`}>{profile.phone}</a></dd></div>

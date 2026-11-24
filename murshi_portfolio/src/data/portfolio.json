@@ -2,10 +2,10 @@
   "updated": "2026-11-24",
   "profile": {
     "name": "Murshid VP",
-    "headline": "AI Engineer — Applied LLMs · Document AI · NLP",
+    "headline": "AI & Forward Deployed Engineer — Python · Backend · UI · Applied LLMs",
     "intro": "I build LLM and document-AI systems that run in production: extraction pipelines for global banks and US tax firms, and AI supplier search for industrial procurement in Saudi Arabia.",
     "summary": "AI Engineer with 5+ years building production AI applications, LLM integrations and document-intelligence systems for clients in banking, US tax, healthcare and insurance. Strongest in multi-model LLM integration, prompt engineering, and shipping AI features through FastAPI/Python backends with Celery, Redis and Docker. Comfortable working directly with clients, onsite and remote, from scoping to production support.",
-    "open_to": "Applied AI / LLM engineering roles in the UAE",
+    "open_to": "Applied AI / LLM engineering roles, anywhere (relocation or remote)",
     "location": "Al Qusais, Dubai, UAE",
     "email": "murshidvp.dev@gmail.com",
     "phone": "+971 54 301 7198",
@@ -14,31 +14,63 @@
     "resume": "/Murshid_VP_Resume.pdf",
     "photo": "/profile.jpg"
   },
+  "route": [
+    {
+      "role": "Python developer",
+      "years": "2021",
+      "what": "Python automation, OCR and data pipelines with Pandas and NumPy for banking documents."
+    },
+    {
+      "role": "Backend developer",
+      "years": "",
+      "what": "FastAPI, Flask and Django microservices on PostgreSQL, with Celery and Redis for heavy batch work."
+    },
+    {
+      "role": "UI designer",
+      "years": "",
+      "what": "React interfaces, dashboards and reporting views, including this site."
+    },
+    {
+      "role": "AI engineer",
+      "years": "",
+      "what": "GPT, Gemini and Llama in production, document AI at 97–98% accuracy, RAG and agents."
+    },
+    {
+      "role": "Forward Deployed Engineer",
+      "years": "now",
+      "what": "With clients onsite and remote, from scoping to production support: HSBC, Citibank, Bank Islam."
+    }
+  ],
   "proof": [
     {
       "field": "experience",
       "value": "5+ years",
-      "note": "production AI and backend systems"
+      "note": "production AI and backend systems",
+      "source": "Building production AI and backend systems for 5+ years."
     },
     {
       "field": "extraction_accuracy",
       "value": "97–98%",
-      "note": "document AI, banking and US tax"
+      "note": "document AI, banking and US tax",
+      "source": "Document AI for global banks and US tax at 97–98% accuracy."
     },
     {
       "field": "volume",
       "value": "millions of documents",
-      "note": "100K+ a month"
+      "note": "100K+ a month",
+      "source": "Pipelines that process millions of documents, 100K+ a month."
     },
     {
       "field": "tax_return_time",
       "value": "days → minutes",
-      "note": "K-1 / K-3, 250+ fields"
+      "note": "K-1 / K-3, 250+ fields",
+      "source": "K-1 / K-3 tax returns cut from days → minutes."
     },
     {
       "field": "procurement_turnaround",
       "value": "~95% faster",
-      "note": "AI supplier discovery"
+      "note": "AI supplier discovery",
+      "source": "AI supplier discovery made procurement ~95% faster."
     }
   ],
   "work_projects": [
@@ -207,6 +239,26 @@
       "repo": "falio-rfq-dashboard"
     }
   ],
+  "building": [
+    {
+      "title": "Falio ERP",
+      "desc": "Multi-tenant ERP for RFQ → quote → PO automation and BOM tracking, with a pluggable AI provider for document extraction.",
+      "status": "in progress",
+      "link": ""
+    },
+    {
+      "title": "Finance Calculator",
+      "desc": "Production-style FastAPI service built in phases: async SQLAlchemy, Alembic, Redis with graceful fallback, structlog, health and readiness endpoints.",
+      "status": "in progress",
+      "link": "https://github.com/murshidvpdev/financial-calculator"
+    },
+    {
+      "title": "Portfolio agent for Life Agents",
+      "desc": "Keeps this site in sync with my resume, learning log and code, and sends me update cards I approve from my phone.",
+      "status": "shipping",
+      "link": ""
+    }
+  ],
   "skills": {
     "production": [
       {
@@ -368,19 +420,6 @@
       "image": "/client-engagement.jpg"
     }
   ],
-  "learning": [
-    {
-      "title": "Production agentic RAG: corrective RAG, LLM-as-judge, query rewriting",
-      "status": "learning"
-    },
-    {
-      "title": "Multi-tenant agentic RAG on AWS: Bedrock, S3, guardrails, OpenTelemetry",
-      "status": "learning"
-    },
-    {
-      "title": "Forward Deployed Engineering",
-      "status": "learning"
-    }
-  ],
-  "education": "BE Computer Science · Hindustan College of Engineering & Technology, Coimbatore · 2016 – 2020"
+  "education": "BE Computer Science · Hindustan College of Engineering & Technology, Coimbatore · 2016 – 2020",
+  "posts": []
 }

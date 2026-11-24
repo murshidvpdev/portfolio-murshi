@@ -1,6 +1,6 @@
 import { FaGithub } from "react-icons/fa";
 
-export default function Builds({ items, github }) {
+export default function Builds({ items, building, github }) {
   return (
     <section id="builds" className="section wrap">
       <header className="section-head">
@@ -24,6 +24,28 @@ export default function Builds({ items, github }) {
           </article>
         ))}
       </div>
+
+      {building?.length > 0 && (
+        <div className="building">
+          <h3 className="building-title"><span className="pulse" aria-hidden="true" />Building now</h3>
+          <ul>
+            {building.map((b) => (
+              <li key={b.title}>
+                <div>
+                  <strong>{b.title}</strong>
+                  <p>{b.desc}</p>
+                </div>
+                {b.link ? (
+                  <a className="mono" href={b.link} target="_blank" rel="noreferrer">code →</a>
+                ) : (
+                  <span className="mono">{b.status}</span>
+                )}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
       <p className="more"><a href={github} target="_blank" rel="noreferrer">More on GitHub →</a></p>
     </section>
   );

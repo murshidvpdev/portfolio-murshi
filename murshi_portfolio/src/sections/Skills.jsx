@@ -13,7 +13,7 @@ function Column({ title, note, groups, tone }) {
   );
 }
 
-export default function Skills({ skills, learning }) {
+export default function Skills({ skills }) {
   return (
     <section id="skills" className="section wrap">
       <header className="section-head">
@@ -24,12 +24,6 @@ export default function Skills({ skills, learning }) {
         <Column title="In production" note="Used at work, on client systems." groups={skills.production} tone="prod" />
         <Column title="In personal projects" note="Built and working, not yet on client systems." groups={skills.personal} tone="side" />
       </div>
-      {learning?.length > 0 && (
-        <div className="learning">
-          <span className="mono">learning now</span>
-          <ul>{learning.map((l) => <li key={l.title}>{l.title}</li>)}</ul>
-        </div>
-      )}
     </section>
   );
 }

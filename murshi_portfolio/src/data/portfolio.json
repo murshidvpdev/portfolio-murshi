@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-25",
+  "updated": "2026-11-26",
   "profile": {
     "name": "Murshid VP",
     "headline": "AI & Forward Deployed Engineer — Python · Backend · UI · Applied LLMs",
@@ -437,6 +437,11 @@
       "title": "Fixing RAG hallucinations with a grading and web-fallback layer",
       "date": "2026-11-25",
       "body": "When we built a basic RAG system, it had one clear problem. If the answer wasn't in the knowledge base, the model still answered. It filled the gap with something that sounded right but wasn't.\n\nA basic RAG pipeline has no way to say \"what I retrieved is not good enough.\" It takes the top results and passes them to the LLM, whether they are relevant or not.\n\nSo I added two more layers on top of the retrieval step.\n\nThe first layer is a grader. An agent looks at what came back from the knowledge base and rates how well it answers the question. It asks whether the content is actually relevant, or only loosely similar.\n\nThe second layer is the fallback, and it depends on that rating:\n\n- If the content is good, the system uses it and generates the answer from it.\n- If the content is weak, the agent rewrites the query and tries again.\n- If that still isn't enough, it searches the web with a tool like Tavily, reads the results, and answers from those.\n\nThe final answer is then built only from content that passed the check, either from the knowledge base or from fresh web results.\n\nThis helps with two things. The model is less likely to hallucinate, because it no longer answers from weak context. And answers are less likely to be out of date, because the web search covers what the knowledge base is missing or has stale.\n\nWhat I learned is that retrieval quality needs to be checked on every question. Grading the context before generating the answer made the system more honest about what it knows. When it doesn't know, it now goes and looks."
+    },
+    {
+      "title": "Giving a search agent a RAG retriever as a tool",
+      "date": "2026-11-26",
+      "body": "This comes from a learning project, not client work. I built it while going through the Udemy course \"Generative AI with LangChain and Hugging Face\". The project is a search engine app that uses tools and agents.\n\nThe problem: an LLM agent only knows what it was trained on, and that can be out of date. The agent in the course project has search tools, but I wanted to see how it could also answer from a specific page or document I choose, like the LangSmith docs.\n\nThe idea I took from it is to make the retriever a tool. The steps are:\n\n- Load the document or web page.\n- Split it into chunks and convert them to vectors with an embedding model.\n- Save the vectors in a vector store and expose it as a retriever.\n- Give that retriever to the agent as a tool, with a clear description of what it covers.\n\nWhen a question matches that description, the agent calls the retriever. It runs a similarity search and gets back the closest chunks. The model then answers from those chunks. I can also check this directly by asking the model whether the retriever returns the right content for a question.\n\nThe part I like most is how it handles updates. If the source changes, I don't touch the agent or the model. I reload the document and rebuild the vectors, and the same tool now returns the new content. The agent's logic stays as it is, and only the data behind the tool changes.\n\nWhat I learned is that a retriever is just another tool for the agent. The agent decides when to use it, and the description I write for the tool is what drives that decision. I have not run this setup in production. It is how I understood the pattern from the course, and I want to apply it in a project of my own next."
     }
   ]
 }
